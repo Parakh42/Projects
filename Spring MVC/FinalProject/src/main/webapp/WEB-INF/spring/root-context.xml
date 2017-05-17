@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="parakh.mahajan@gmail.com" />
+		<property name="password" value="Parakh42@" />
+ 
+		<!-- The name of the property, following JavaBean naming conventions -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean> 
+	
+	
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="userValidator" class="com.parakh.parakh.validator.UserValidator"></bean>
+	    <bean id="userDao" class="com.parakh.parakh.dao.UserDAO" ></bean>
+	    <bean id="postValidator" class="com.parakh.parakh.validator.PostValidator"></bean>
+	    <bean id="postDao" class="com.parakh.parakh.dao.PostDAO" ></bean>
+	    <bean id="customerValidator" class="com.parakh.parakh.validator.CustomerValidator"></bean>
+	    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+	</bean>
+	
+</beans>
