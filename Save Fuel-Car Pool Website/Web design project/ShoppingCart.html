@@ -1,0 +1,435 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Carpool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="carpool1.css" type="text/css">
+    <link rel="stylesheet" href="stylecart.css" type="text/css">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="css/bootstrapex3.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css"> 
+  <script src="scroll.js" type="text/javascript"></script>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+ <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+</head>
+
+<body class="color container-fluid">
+  <div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+ <a class="navbar-brand" href="index.html"><img src="images/logo.png"></a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+
+      <ul class="nav navbar-nav navbar-right" id="list">
+        <li><a href="index.html"><b>HOME</b></a></li>
+<li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVICES
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+                             <li><a href="sellerView.html">Offer a lift</a></li>
+                             <li><a href="customer.html">Search for carpool</a></li>
+                             <li><a href="garage.html">Garage services</a></li>
+                       </ul>
+                     </li>        
+                     <li><a href="business.html"><b>BUSINESS</b></a></li>
+                    <li><a href="#contact"><b>CONTACT US</b></a></li>
+
+        <li><a href="career.html"><b>CAREERS</b></a></li>
+    <!--<li class="dropdown" id="menuLogin"><a href="#" data-toggle="dropdown" id="navLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                           <div class="dropdown-menu">
+                               <form method="post" action="success.php">
+                               Returning User
+                                   <input name="username" id="username" type="text" placeholder="Username"> <br><br>
+                                   <input name="password" id="password" type="password" placeholder="Password"><br><br>
+                                   <input type="submit" name="login_btn" value="Login">
+                                   <br>
+                                   <a href="#" id="forgot">Forgot username or password?</a>
+                                </form>
+                                <form method="post" action="signup.php">
+                                   <hr>
+                                   New User
+                                   <br>
+                                   <input type="submit" name="signup_btn" value="Signup">
+                               </form>
+                           </div>
+                       </li> -->
+                       <li><a data-toggle="modal" data-target="#login-modal" style="cursor:pointer">LOGIN</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav></div>
+
+<!-- login button modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+               <div class="loginmodal-container">
+                   <h1>Login to Your Account</h1><br>
+                <form method="post" action="success.php">
+                               <h3>Returning User</h3><br>
+                                   <input name="username" id="username" type="text" placeholder="Username"> <br>
+                                   <input name="password" id="password" type="password" placeholder="Password"><br>
+                                   <input type="submit" name="Submit" class="login loginmodal-submit" value="Submit">
+                                   
+                                </form>
+                                <form method="post" action="signup2.html">
+                                  <h3> New User</h3>
+                                   <br>
+                                   <input type="submit" name="Submit" class="login loginmodal-submit" value="Signup">
+                               </form>
+                   
+               
+               </div>
+           </div>
+         </div>
+
+
+
+  <script>  
+    
+  var check=false;
+
+
+  function myFunction() {
+    
+    if(check==true)
+    {
+      confirm("Proceed to payment?");
+     var rowCount = orderedProductsTbl.rows.length;
+          for (var i = rowCount - 2; i > 0; i--) 
+      {
+              orderedProductsTbl.deleteRow(i);
+          }
+    shoppingCart=[];
+    cart_total_price=0;
+    document.getElementById("cart_total").innerHTML=cart_total_price;
+    check=false;
+  }
+  else
+  {
+    alert("Please select a few items to place an order! ");
+  }
+
+  }
+
+
+      var shoppingCart = [];
+
+      function displayShoppingCart(){
+          var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
+          
+          while(orderedProductsTblBody.rows.length>0) {
+              orderedProductsTblBody.deleteRow(0);
+          }
+
+          
+          var cart_total_price=0;
+      
+          
+          for(var product in shoppingCart){
+                 
+              var row=orderedProductsTblBody.insertRow();
+     
+              var cellName = row.insertCell(0);
+              var cellDescription = row.insertCell(1);
+              var cellPrice = row.insertCell(2);
+              cellPrice.align="right";
+        
+       
+              cellName.innerHTML = shoppingCart[product].Name;
+              cellDescription.innerHTML = shoppingCart[product].Description;
+              cellPrice.innerHTML = shoppingCart[product].Price;
+              cart_total_price+=shoppingCart[product].Price;
+        var x=row.insertCell(3);
+        x.innerHTML = '<input type="button" class="deletebtn" value="Delete!"onClick="deleteFromCart(this)" >';
+          }
+        
+          document.getElementById("cart_total").innerHTML=cart_total_price;
+      check=true;
+      }
+
+
+      function AddtoCart(name,description,price){
+       
+         var singleProduct = {};
+     
+         singleProduct.Name=name;
+         singleProduct.Description=description;
+         singleProduct.Price=price;
+
+         shoppingCart.push(singleProduct);
+       
+
+         displayShoppingCart();
+
+      }  
+    
+    function deleteFromCart(r) {
+    
+    //alert(r);
+      var i = r.parentNode.parentNode.rowIndex;
+    //alert(i);
+    
+    shoppingCart.splice(i-1,1);
+      document.getElementById("orderedProductsTbl").deleteRow(i);
+    
+    //alert("deleted row is"+i);
+    
+    //displayShoppingCart();
+    var cart_total_price=0;
+    for(var product in shoppingCart){
+    cart_total_price=cart_total_price+shoppingCart[product].Price;
+    //alert("Product is"+product+" price is"+shoppingCart[product].Price);
+    }
+    document.getElementById("cart_total").innerHTML=cart_total_price;
+    check=true;
+    if(cart_total_price==0)
+    check=false;
+    }
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="shopping-cart well">
+   
+        <div class="title">
+          Shopping Cart
+        </div>
+
+        <div class="item">
+   
+          <div class="image">
+            <img src="images/b1.jpg" alt="" height='75' width='75' />
+          </div>
+   
+          <div class="description">
+            <span>Basic Membership</span>
+          </div>
+   
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Basic Membership','1 Month',5)">
+              <img src="images/plus.svg" alt="" />
+            </button>
+          </div>
+   
+          <div class="total-price">$5</div>
+        </div>
+   
+
+   <div class="item">
+   
+          <div class="image">
+            <img src="images/s1.png" alt="" height='75' width='75'/>
+          </div>
+   
+          <div class="description">
+            <span>Silver Membership</span>
+          </div>
+   
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Silver Membership','1 Month',19)">
+              <img src="images/plus.svg" alt="" />
+            </button>
+        
+          </div>
+   
+          <div class="total-price">$19</div>
+        </div>
+   
+    
+    
+        <div class="item">
+   
+          <div class="image">
+            <img src="images/g1.png" alt="" height='75' width='75'/>
+          </div>
+   
+          <div class="description">
+            <span>Gold Membership</span>
+          </div>
+   
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Gold Membership','1 Month',29)">
+              <img src="images/plus.svg" alt="" />
+            </button>
+          </div>
+      
+    <div class="total-price">$29</div>
+        </div>    
+      
+
+        <div class="item">
+   
+          <div class="image">
+            <img src="images/p1.png" alt="" height='75' width='75' />
+          </div>
+   
+          <div class="description">
+            <span>Platium Membership</span>
+           </div>
+   
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button" onclick="AddtoCart('Platium Membership','1 Month',49)">
+              <img src="images/plus.svg" alt="" />
+            </button>
+          </div>
+   
+          <div class="total-price">$49</div>
+        </div>
+      
+      
+      </div>
+    
+    
+    <div class="ordered-cart">
+
+        <div class="title">
+          Ordered Items
+        </div>
+      <div class="ordered-table">
+     <td valign="top">
+              <table class="table table-striped" cellpadding="20" cellspacing="20" border="1" id="orderedProductsTbl">
+                  <thead>
+                      <tr>
+                          <td>
+                              Name
+                          </td>
+                          <td>
+                              Description
+                          </td>
+                          <td>
+                              Price in $
+                          </td>
+              <td>
+                              Remove from Cart?
+                          </td>
+                      </tr>
+                  </thead>
+                  <tbody id="orderedProductsTblBody">
+                  </tbody>
+                  <tfoot>
+                      <tr>
+            <td>
+            Total:
+            </td>
+            <td>
+            </td>
+            
+                          <td colspan="1" align="right" id="cart_total">
+
+                          </td>
+                          <td>
+            </td>
+              
+              
+              </tr>
+            </tfoot>  
+      </table>      
+        <br></br>
+                   </div>
+                   <div class="submit">
+                        <a href="payment.html"> <input type="button" value="Place Order!" onclick="myFunction()"></input></a>
+                  </div>
+</div> 
+
+
+
+
+
+
+
+
+<footer class="footer-distributed well slideanim">
+
+     <div id="contact" class="footer-left">
+
+       <h3><span><a class="navbar-brand" href="index.html"><img src="images/logo.png"></a></span></br></h3>
+<p class="footer-links">
+         <a href="index.html">Home</a>
+         ·
+         <a href="garage.html">Services</a>
+         ·
+         <a href="business.html">Business</a>
+         ·
+         <a href="career.html">Careers</a>
+         ·
+         <a href="#contact">Contact</a>
+         .
+       </p>
+
+       <p class="footer-company-name">Let's Carpool &copy; 2017</p>
+     </div>
+
+     <div class="footer-center">
+
+       <div>
+         <i class="fa fa-map-marker"></i>
+         <p><span>1 Lincoln Street</span> Boston, MA</p>
+       </div>
+
+       <div>
+         <i class="fa fa-phone"></i>
+         <p>+1 555 123456</p>
+       </div>
+
+       <div>
+         <i class="fa fa-envelope"></i>
+         <p><a href="mailto:support@company.com">support@letscarpool.com</a></p>
+       </div>
+
+     </div>
+
+     <div class="footer-right">
+
+       <p class="footer-company-about">
+         <span>About the company</span>
+         Cut the cost of your journey and meet amazing people at the same time by using our customer and business-oriented carpool solutions.
+       </p>
+
+       <div class="footer-icons">
+
+         <a href="https://www.facebook.com/krishnakantanand"><i class="fa fa-facebook"></i></a>
+         <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+         <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+         <a href="https://github.com/"><i class="fa fa-github"></i></a>
+
+       </div>
+
+     </div>
+    
+
+   </footer>
+</body>
+</html>

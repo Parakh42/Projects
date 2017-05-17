@@ -1,0 +1,301 @@
+
+
+.shopping-cart {
+  width: 800px;
+  height: auto;
+  margin: 80px auto;
+  background: #black;
+  border-radius: 0px;
+}
+
+.title {
+  height: 60px;
+  text-align:center;
+  border-bottom: 2px solid #E1E8EE;
+  padding: 21px 32px;
+  color: #990000;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+ 
+.item {
+  padding: 20px 10px;
+  height: 120px;
+  display: flex;
+  border-top:  2px solid #E1E8EE;
+  border-bottom:  2px solid #E1E8EE;
+}
+
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 100px;
+}
+
+	
+.image {
+  margin-right: 51px;
+}
+ 
+.description {
+  padding-top: 11px;
+  margin-right: 151px;
+  width: 217px;
+}
+ 
+.description span {
+  display: block;
+  font-size: 19px;
+  color: #43484D;
+  font-weight: 401;
+}
+ 
+.description span:first-child {
+  margin-bottom: 11px;
+}
+.description span:last-child {
+  font-weight: 301;
+  margin-top: 9px;
+  color: #black;
+}
+
+.quantity {
+  padding-top: 21px;
+  margin-right: 91px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: 1px;
+  text-align: center;
+  width: 33px;
+  font-size: 18px;
+  color: #43484D;
+  font-weight: 303;
+}
+ 
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.plus-btn img {
+  margin-top: 2px;
+  padding-right: 30px;
+}
+ 
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+
+
+.submit{
+	padding-top:auto;
+	padding-bottom:20px;
+	padding-left: 200px;
+
+}
+
+.ordered-cart {
+  width: 900px;
+  height: auto;
+  margin: 100px auto;
+  background: #FFFFFF;
+  border-radius: 50px;
+}
+
+.ordered-table
+{
+	
+	padding-top: 20px;
+	padding-left: 55px;
+	padding-right: 55px;
+}
+
+img {
+    border-radius: 10px 10px 0px 0px;
+}
+
+h4	
+{
+	 font-family: 'Roboto', sans-serif;
+	 color: #FFFFFF;
+}
+
+.navbar-header .navbar-brand:hover,
+.navbar-header .navbar-brand:focus,
+.navbar-collapse .navbar-nav > li > a:hover,
+.navbar-collapse .navbar-nav > li > a:focus {
+    color: #990000;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+.navbar-header .navbar-brand,
+.navbar-header .navbar-brand,
+.navbar-collapse .navbar-nav,
+.navbar-collapse .navbar-nav{
+	font-weight: bold;
+	font-family: 'Roboto', sans-serif;
+} 
+
+.form-group, footer{
+font-family: 'Roboto', sans-serif;
+}
+
+legend{
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+}
+
+.btn {
+    background-color: #990000; 
+    border: none;
+    color: white;
+	padding: 7px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15 px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #990000;
+    color: white;
+}
+
+
+input[type=button] 
+{
+    background-color: #990000;
+    border: none;
+    color: white;
+	border-radius: 5px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+	width: 50%
+    cursor: pointer;
+}
+
+
+.cart{
+background-color: #b3e6ff;
+}
+
+
+.deletebtn
+{
+	width: 60%;
+	text-align: center;
+	padding: 2px 2px;
+	margin-left: 0 px;
+	display: inline-block;
+	}
+	td 
+{
+    text-align:center; 
+    vertical-align:middle;
+}
+
+table{
+	margin-left: 20px;
+}
+
+table,td  {
+	border: 2px solid #51C6E4;
+	border-collapse: collapse;
+	padding: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+th  {
+	border: 2px solid grey;
+	border-collapse: collapse;
+	padding: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+
+@media (max-width: 800px) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .ordered-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+   .image img {
+    width: 25%;
+	height:90%;
+	
+  }
+  
+  .submit{
+	padding-top:auto;
+	padding-bottom:20px;
+	padding-left: 65px;
+
+}
+
+
+  
+  table{
+	margin-left:10px;
+	margin-right:10px;
+}
+
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .buttons {
+    margin-right: 20px;
+  }
+}
+
