@@ -1,0 +1,17 @@
+# Format:
+#
+#       qnum   0   doc-name     is-relevant
+#
+#
+
+0 	 0 	 trial1.txt     	 1
+0 	 0 	 trial2.txt     	 1
+0 	 0 	 trial3.txt     	 1
+0 	 0 	 trial4.txt     	 0
+0 	 0 	 trial5.txt     	 0
+0 	 0 	 trial6.txt     	 0
+0 	 0 	 trial7.html     	 0
+0 	 0 	 trial8.json     	 0
+0 	 0 	 trial9.pdf     	 0
+0 	 0 	 trial10.docx     	 0
+0 	 0 	 trial9.xml     	 0
